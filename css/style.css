@@ -17,18 +17,7 @@ body {
     clear: both;
 }
 
-Visuallyhidden {
-    border: 0;
-    clip: rect(0 0 0 0);
-    -webkit-clip-path: inset(50%);
-    clip-path: inset(50%);
-    height: 1px;    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-    white-space: nowrap; /* 1 */
-}
+
 
 /*NAVBAR STYLING*/
 .navbar {
@@ -354,8 +343,9 @@ Visuallyhidden {
 .picebox__title {
     width:30%;
     font-size: 25px;
+    font-weight: 400;
     text-transform: uppercase;
-    color: #27C7AB;
+    color: #000000;
     border-bottom: 10px solid #27C7AB;
 }
 
@@ -495,37 +485,25 @@ Visuallyhidden {
 .contact__title{
     width:30%;
     font-size: 25px;
+    font-weight: 400;
     text-transform: uppercase;
-    color: #27C7AB;
+    color: #000000;
     border-bottom: 10px solid #27C7AB;
 }
 
 .contact__form-data label {
-    display: none;
+display: none;
 }
 .contact__form {
-    display: flex;
-    flex-direction: row;
+display: flex;
+flex-direction: row;
 }
 
 .contact__form-data{
-    display: flex;
-    flex-direction: column;
-    flex: 0 0 60%;
-    padding:20px 0;
-}
-
-
-.contact__submit {
-    position: relative;
-    padding: 10%;
-}
-
-.contact__img {
-    position: absolute;
-    top:0;
-    left: 50%;
-
+display: flex;
+flex-direction: column;
+flex: 0 0 60%;
+padding:20px 0;
 }
 
 .contact__form input, textarea {
@@ -541,26 +519,66 @@ Visuallyhidden {
 }
 
 .contact__form textarea {
-    height: 150px;
+    height: 200px;
 }
-.contact__submit--description {
-    position: absolute;
-    top: 57%;
-    left: 200px;
-    width: 150px
+.contact__submit {
+padding-left: 50px;
+}
+
+.contact__submit--img {
+display: block;
+height: 210px;
+background: url(../dodatki/images/red_chair.png) center top no-repeat;
+}
+
+.contact__checkbox {
+    margin-top: 30px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: row;
 }
 
 #checkbox {
     position: absolute;
-    top: 55%;
-    left: 10px;
+    left: -1000px;
 }
 
+.contact__checkbox input ~ .contact__checkbox-icon {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #A1E6D1;
+    display: inline-block;
+
+}
+
+.contact__checkbox input ~ .contact__checkbox-icon:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url("../dodatki/images/form_ok.jpg") center center no-repeat;
+    width: 50px;
+    height: 50px;
+    opacity: 1;
+    visibility: hidden;
+    transform: scale(0.6, 0.6);
+    transition: 0.5s all;
+}
+
+.contact__checkbox input:checked ~ .contact__checkbox-icon:before {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1, 1);
+}
+.contact__submit--description {
+    font-family: 'Raleway', sans-serif;
+    margin-left: 10px;
+    display: inline-block;
+    color: #AAA;
+}
 
 .contact__button--submit {
-    position: absolute;
-    top: 65%;
-    left: 90px;
     font-size: 26px;
     padding: 15px 30px;
     font-weight: bold;
@@ -581,10 +599,14 @@ Visuallyhidden {
 }
 
 .footer__copyright {
+    margin-top: 10px;
     width: 65%;
 }
 
+
 .footer__logo-img {
+    display: block;
+    margin-top: 10px;
     font-size: 16px;
     font-weight: 300;
     text-decoration: none;
